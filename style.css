@@ -24,13 +24,8 @@ header{
     position: sticky;
     top: 0;
     left: 0;
+    box-shadow: 0px 0px 10px #0c1d16;
 }
-
-/* .logo{
-    width: 100px;
-    height: 30px;
-    border: 1px solid #000;
-} */
 
 header ul, 
 .menu{
@@ -45,7 +40,8 @@ header ul {
 
 header li a,
 header li a:visited,
-header li a:active{
+header li a:active
+{
     color: #0c1d16;
     text-decoration: none;
     text-transform: uppercase;
@@ -55,7 +51,8 @@ header li a:active{
     transition: all 0.5s;
 }
 
-header li a:hover{
+header li a:hover,
+header li a:focus {
     background-color: #0c1d16;
     color: #52b788;
     box-shadow: 0 0 0 5px hsla(155, 41%, 8%, 0.5);
@@ -73,9 +70,11 @@ header li a.current {
     background-color: transparent;
     border: 1px solid #0c1d16;
     border-radius: 150px;
-    position: relative;
-    overflow: hidden;
-    z-index: 1;
+}
+
+.signin-btn a{
+    text-decoration: none;
+    color: #0c1d16;
 }
 
 .front{
@@ -86,24 +85,22 @@ header li a.current {
     align-items: center;
 }
 
-
-
-.text{
+.title-text{
     margin-left: 5rem;
 }
 
-.text h1{
+.title-text h1{
     font: 3rem 'Unbounded', cursive;
     font-weight: 700;
     margin: 1rem 0;
 }
 
-.text h1 span{
+.title-text h1 span{
     font: inherit;
     color: #52b788;
 }
 
-.text p{
+.title-text p{
     width: 0px;
     overflow: hidden;
     animation: type 1.5s forwards;
@@ -117,7 +114,7 @@ header li a.current {
         width: 0px;
     }
     to{
-        width: 300px;
+        width: 270px;
     }
     
 }
@@ -126,15 +123,112 @@ header li a.current {
     outline: 2px solid #52b788;
     outline-offset: 10px;
     border-radius: 0.25rem;
+    border: 1px solid #f5f5f5;
 }
+
+.title-img img{
+    border-radius: 0.25rem;
+}
+
+
+h2{
+    font-family: 'Unbounded', cursive;
+}
+
+.trending {
+    display: flex;
+    flex-flow: column;
+    background-color: #52b788;
+    padding: 2rem;
+}
+
+.line {
+    width: 120px;
+    height: 5px;
+}
+
+.line.dark{
+    background-color: #0c1d16;
+}
+
+.line.light{
+    background-color: #52b788;
+}
+
+.text p{
+    margin: 0.5rem 0;
+}
+
+.movies{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    gap: 2rem;
+    margin-top: 2.5rem;
+}
+
+.movie-card img{
+    border-radius: 0.25rem;
+    transform: trasform 0.5s ease-in;
+    box-shadow: 2px 2px 10px #0c1d16;
+}
+
+.movie-card:hover {
+    transform: scale(1.1);
+}
+
+.currently{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    padding: 2rem 1rem;
+    margin-bottom: 2rem;
+}
+
+.currently img{
+    border-radius: 0.25rem;
+    border: 1px solid #f5f5f5;
+    outline: 4px solid #52b788;
+    outline-offset: 5px;
+}
+
+.currently button {
+    background-color: #f5f5f5;
+    border: none;
+    border-radius: 0.25rem;
+    padding: 0.8rem 1rem;
+    margin-top: 2rem;
+    font: inherit;
+    color: #52b788;
+    cursor: pointer;
+    transition: 0.5s;
+}
+
+.currently button:hover {
+    color: #f5f5f5;
+    transform: translate(-0.25rem, -0.25rem);
+    background-color: #52b788;
+    box-shadow: 0.25rem 0.25rem #f5f5f5;
+    border: 1px solid #f5f5f5;
+}
+
 
 @media  screen and (max-width: 768px) {
     .front{
         flex-direction: column-reverse;
     }
 
-    .text{
+    .title-text{
         margin: 0;
+    }
+
+    .currently{
+        flex-direction: column-reverse;
+        gap: 2rem;
+    }
+
+    .coming {
+        flex-direction: column;
     }
     
 }
