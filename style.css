@@ -4,4 +4,137 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: 'Noto Sans', sans-serif;
+    /* font-family: 'Unbounded', cursive; */
+}
+
+body{
+    min-height: 100vh;
+    background-color: #0c1d16;
+    color: #f5f5f5;
+}
+
+header{
+    height: 80px;
+    background-color: #52b788;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0.5rem;
+    position: sticky;
+    top: 0;
+    left: 0;
+}
+
+/* .logo{
+    width: 100px;
+    height: 30px;
+    border: 1px solid #000;
+} */
+
+header ul, 
+.menu{
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+header ul {
+    list-style-type: none;
+}
+
+header li a,
+header li a:visited,
+header li a:active{
+    color: #0c1d16;
+    text-decoration: none;
+    text-transform: uppercase;
+    display: block;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    transition: all 0.5s;
+}
+
+header li a:hover{
+    background-color: #0c1d16;
+    color: #52b788;
+    box-shadow: 0 0 0 5px hsla(155, 41%, 8%, 0.5);
+}
+
+header li a.current {
+    background-color: #0c1d16;
+    color: #52b788;
+}
+
+.signin-btn {
+    font: inherit;
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+    background-color: transparent;
+    border: 1px solid #0c1d16;
+    border-radius: 150px;
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+}
+
+.front{
+    height: 90vh;
+    display: flex;
+    padding: 5rem;
+    justify-content: space-between;
+    align-items: center;
+}
+
+
+
+.text{
+    margin-left: 5rem;
+}
+
+.text h1{
+    font: 3rem 'Unbounded', cursive;
+    font-weight: 700;
+    margin: 1rem 0;
+}
+
+.text h1 span{
+    font: inherit;
+    color: #52b788;
+}
+
+.text p{
+    width: 0px;
+    overflow: hidden;
+    animation: type 1.5s forwards;
+    white-space: nowrap;
+    background-color: #52b788;
+    padding: 0.5rem;
+}
+
+@keyframes type {
+    from{
+        width: 0px;
+    }
+    to{
+        width: 300px;
+    }
+    
+}
+
+.title-img {
+    outline: 2px solid #52b788;
+    outline-offset: 10px;
+    border-radius: 0.25rem;
+}
+
+@media  screen and (max-width: 768px) {
+    .front{
+        flex-direction: column-reverse;
+    }
+
+    .text{
+        margin: 0;
+    }
+    
 }
