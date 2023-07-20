@@ -4,8 +4,44 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Movie</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 <body>
-    
+    <header>
+        <div class="logo"><a href="index.html">
+            <img src="images/logo.jpg" height="30">
+        </a></div>
+        <div class="menu">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="#">Currently Showing</a></li>
+                <li><a href="#">Coming Soon</a></li>
+            </ul>
+            <button class="signin-btn"><a href="signin.html" target="_blank">Sign In</a> </button>
+        </div>
+    </header>
+    <section class="movie-info">
+        <div class="poster">
+            <img src="https://assets-in.bmscdn.com/iedb/movies/images/mobile/thumbnail/xlarge/oppenheimer-et00347867-1683533414.jpg"><br>
+            <button class="btn"><a href="https://www.youtube.com/watch?v=uYPbbksJxIg" target="_blank">View Trailer&nbsp; <i class="fa-solid fa-video"></i></a></button>
+        </div>
+        <div class="info">
+            <h2><span class="movie-title">OPPENHEIMER</span></h2>
+            <div class="line light"></div>
+            <p>Releasing On: <span class="release">July 21</span></p>
+            <div><i class="fa-solid fa-star"></i> <span class="rating">8.7</span></div>
+            <div>
+                <span class="dur">182 mins</span> &#8226;
+                <span class="genre">Biography, Drama, History</span> &#8226;
+                <span class="cert">UA</span>
+            </div>
+        </div>
+    </section>
+    <section class="about">
+        <h3>About The Movie</h3>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Cum harum ipsa provident reiciendis ullam adipisci libero, eius repellendus reprehenderit, quibusdam officiis veritatis ab voluptas officia deleniti repellat facilis. Similique unde quasi, ducimus asperiores officia velit officiis, repellat omnis dignissimos nam quae alias! Nostrum velit libero ex quam alias voluptatem hic.</p>
+    </section>
+    <p class="btnp"><button class="book">Book Ticket <i class="fa-solid fa-ticket"></i></button></p>
 </body>
 </html>
