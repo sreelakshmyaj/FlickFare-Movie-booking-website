@@ -379,6 +379,16 @@ form small a:hover {
     opacity: 1;
 }
 
+@media screen and (max-width: 1200px){
+    .front{
+        flex-direction: column-reverse;
+    }
+    .resize {
+        width: 300px;
+        height: auto;
+    }
+}
+
 
 @media  screen and (max-width: 768px) {
     .front{
@@ -410,5 +420,22 @@ form small a:hover {
     .movie-info{
         align-items: center;
         justify-content: center;
+    }
+
+    .resize{
+        width: 200px;
+        height: auto;
+    }
+}
+
+@media screen and (max-width: 480px){
+    header{
+        display: none;
+    }
+    .front h1{
+        font-size: 2rem;
+    }
+    h2{
+        font-size: 1.2rem;
     }
 }
