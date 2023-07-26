@@ -23,7 +23,7 @@
     </header>
     <section class="movie-info">
         <div class="poster">
-            <img src="https://assets-in.bmscdn.com/iedb/movies/images/mobile/thumbnail/xlarge/oppenheimer-et00347867-1683533414.jpg"><br>
+            <img src="https://assets-in.bmscdn.com/iedb/movies/images/mobile/thumbnail/xlarge/oppenheimer-et00347867-1683533414.jpg" class="movie-img"><br>
             <button class="btn"><a href="https://www.youtube.com/watch?v=uYPbbksJxIg" target="_blank">View Trailer&nbsp; <i class="fa-solid fa-video"></i></a></button>
         </div>
         <div class="info">
@@ -32,7 +32,7 @@
             <p>Releasing On: <span class="release">July 21</span></p>
             <div><i class="fa-solid fa-star"></i> <span class="rating">8.7</span></div>
             <div>
-                <span class="dur">182 mins</span> &#8226;
+                <span class="dur">182</span> mins &#8226;
                 <span class="genre">Biography, Drama, History</span> &#8226;
                 <span class="cert">UA</span>
             </div>
@@ -45,5 +45,26 @@
     <p class="btnp"><button class="book"><a href="layout.html">
         Book Ticket <i class="fa-solid fa-ticket"></i></button>
     </a></p>
+
+    <script>
+        const movieImg = document.querySelector('.movie-img');
+        const title = document.querySelector('.movie-title');
+        const date = document.querySelector('.release');
+        const rating = document.querySelector('.rating')
+        const dur = document.querySelector('.dur');
+        const genre = document.querySelector('.genre');
+        const cert = document.querySelector('.cert');
+
+        const movieInfo = JSON.parse(localStorage.getItem('movieInfo'));
+        
+        movieImg.src = movieInfo.img;
+        title.textContent = movieInfo.title;
+        date.textContent = movieInfo.date;
+        rating.textContent = movieInfo.rating;
+        dur.textContent = movieInfo.duration;
+        genre.textContent = movieInfo.genre;
+        cert.textContent = movieInfo.cert;
+
+    </script>
 </body>
 </html>

@@ -88,6 +88,8 @@ header li a.current {
     padding: 5rem;
     justify-content: space-between;
     align-items: center;
+    background-image: url(images/herobg.png);
+    background-size: cover;
 }
 
 .title-text{
@@ -302,6 +304,7 @@ form small a:hover {
 
 .info h2{
     font-size: 2.5rem;
+    text-transform: uppercase;
 }
 
 .info div i{
@@ -393,6 +396,7 @@ form small a:hover {
 @media  screen and (max-width: 768px) {
     .front{
         flex-direction: column-reverse;
+        justify-content: center;
     }
 
     .title-text{
@@ -423,7 +427,7 @@ form small a:hover {
     }
 
     .resize{
-        width: 200px;
+        width: 300px;
         height: auto;
     }
 }
