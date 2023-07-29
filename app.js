@@ -29,14 +29,34 @@ const info = [
     },
     
     {
-        "img": "https://assets-in.bmscdn.com/iedb/movies/images/mobile/thumbnail/xlarge/oppenheimer-et00347867-1683533414.jpg",
+        "img": "https://assets-in.bmscdn.com/iedb/movies/images/extra/vertical_logo/mobile/thumbnail/xxlarge/the-dark-knight-et00001549-17-03-2021-06-39-49.jpg",
         "title": "The Dark Knight",
         "date": "July 18",
         "rating": "8.9",
         "duration": "144",
         "genre": "Action, Sci-Fi, Thriller",
         "cert": "UA"
-    }
+    },
+    
+    {
+        "img": "https://assets-in.bmscdn.com/iedb/movies/images/mobile/thumbnail/xlarge/spider-man-across-the-spider-verse-et00347275-1684425314.jpg",
+        "title": "Spider-Man: Across the Spider-Verse",
+        "date": "June 1",
+        "rating": "9.3",
+        "duration": "140",
+        "genre": "Action, Adventure, Animation",
+        "cert": "UA"
+    },
+    
+    {
+        "img": "https://assets-in.bmscdn.com/iedb/movies/images/mobile/thumbnail/xlarge/john-wick-chapter-4-et00311714-1679379542.jpg",
+        "title": "John Wick: Chapter 4",
+        "date": "March 24",
+        "rating": "9.0",
+        "duration": "171",
+        "genre": "Action, Thriller",
+        "cert": "A"
+    },
 ]
 
 movies.forEach((movie) => {
