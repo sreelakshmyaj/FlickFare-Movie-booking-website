@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resume</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+    <header>
+        <ul>
+            <li><a href="#about-me">About Me</a></li>
+            <li><a href="#education">Education</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#references">References</a></li>
+            <li><a href="#contact">Contact Me</a></li>
+            
+        </ul>
+    </header>
+    <section class="profile">
+        <figure>
+            <img src="images/profile.jpg" alt="profile picture">
+            <figcaption>Photo by <a href="https://unsplash.com/@zvandrei?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Andrey Zvyagintsev</a> on <a href="https://unsplash.com/photos/x0c6vTO5ibA?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a></figcaption>
+        </figure>
+        <div class="profile-txt">
+            <h1 class="name nowrap">SREELAKSHMY AJ</h1>
+            <p>Computer Science Student</p>
+        </div>
+    </section>
+
+    <section id="about-me">
+        <h2>About Me</h2>
+        <p>
+            Hello! I'm a first-year computer science student with passion for web designing. I have a strong foundation in <b>HTML</b>, <b>CSS</b> and <b>JavaScript</b> along with experience in <b>ReactJS</b>. Apart from technical skills, I have excellent <b>communication</b> and <b>teamwork</b> skills, allowing me to collaborate effectively with others. I'm eager to continue expaning my knowledge and skills in the exciting world of computer science.
+        </p>
+        <p><i class="fa-solid fa-cake-candles"></i> 1 June 2004</p>
+        <p><i class="fa-solid fa-venus-mars"></i> Female</p>
+        <p><i class="fa-solid fa-house"></i> Avenue Gardens, Kochi, Kerala</p>
+        
+    </section>
+
+    <section id="education">
+        <h2>Education</h2>
+        <div class="schools">
+            <div class="box">
+                <i class="fa-solid fa-school"></i><br>
+                <b>Academic Degree</b> <br>
+                Bhavans' Vidya Mandir, Elamakkara<br>
+                2010-2022
+            </div>
+            <div class="box">
+                <i class="fa-solid fa-graduation-cap"></i><br>
+                <b>B.Tech in Computer Science and Engineering</b><br>
+                Amrita Vishwa Vidyapeetham, Amritapuri<br>
+                2022-2026
+            </div>
+        </div>
+    </section>
+
+    <section id="skills">
+        <h2>Skills</h2>
+        <table>
+            <tr>
+                <td><label for="skill1">HTML: </label></td>
+                <td><progress id="skill1" value="90" max="100"></progress></td>
+            </tr>
+            <tr>
+                <td><label for="skill2">CSS: </label></td>
+                <td><progress id="skill2" value="80" max="100"></progress></td>
+            </tr>
+            <tr>
+                <td><label for="skill3">JavaScript: </label></td>
+                <td><progress id="skill3" value="60" max="100"></progress></td>
+            </tr>
+            <tr>
+                <td><label for="skill4">React: </label></td>
+                <td><progress id="skill4" value="30" max="100"></progress></td>
+            </tr>
+        </table>
+    </section>
+
+    <section id="projects">
+        <h2>Projects</h2>
+        <div class="project-imgs">
+            <div class="container">
+                <a href="images/project1.png" target="_blank">
+                    <img src="images/project1.png"><br>
+                    Countdown Timer
+                </a>
+            </div>
+            <div class="container">
+                <a href="images/project2.png" target="_blank">
+                    <img src="images/project2.png"><br>
+                    Bloom Detective: Flower Identification App
+                </a>
+            </div>
+            <div class="container">
+                <a href="images/project3.png" target="_blank">
+                    <img src="images/project3.png"><br>
+                    Notes App
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <section id="references">
+        <h2>References</h2>
+        <table>
+            <tr>
+                <th>Name</th>
+                <th>Position/Title</th>
+                <th>Contact</th>
+            </tr>
+            <tr>
+                <td>Dr. James Brown</td>
+                <td>Dean, Redmond University</td>
+                <td>312-666-5588</td>
+            </tr>
+            <tr>
+                <td>Susan Bridge</td>
+                <td>Intern Coordinator, TechX</td>
+                <td>618-734-2109</td>
+            </tr>
+            <tr>
+                <td>Kate Langley</td>
+                <td>HOD, Computer Science Dept.</td>
+                <td>8099100203</td>
+            </tr>
+        </table>
+    </section>
+
+    <section id="contact">
+        <h2>Contact Me</h2>
+        <div class="contact-list">
+            <div>
+                <i class="fa-solid fa-phone round"></i><br>
+                <a href="tel:8076762566">8076762566</a>
+            </div>
+            <div>
+                <i class="fa-solid fa-envelope round"></i><br>
+                <a href="mailto:sreelakshmyaj@gmail.com">sreelakshmyaj@gmail.com</a>
+            </div>
+            <div>
+                <i class="fa-brands fa-instagram round"></i><br>
+                <a href="https://www.instagram.com/sreelakshmy.__" target="_blank">@sreelakshmy.__</a>
+            </div>
+            <div>
+                <i class="fa-brands fa-linkedin round"></i><br>
+                <a href="https://in.linkedin.com/" target="_blank">sreelakshmyaj</a>
+            </div>
+        </div>
+        
+    </section>
+  
+</body>
+</html>

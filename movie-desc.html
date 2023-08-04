@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 <body>
+    <div class="overlay">
     <header>
         <div class="logo"><a href="index.html">
             <img src="images/logo.jpg" height="30">
@@ -17,6 +18,7 @@
                 <li><a href="index.html">Home</a></li>
                 <li><a href="currenlty-showing.html">Currently Showing</a></li>
                 <li><a href="coming-soon.html">Coming Soon</a></li>
+                <li><a href="team.html">Team</a></li>
             </ul>
             <button class="signin-btn"><a href="signin.html" target="_blank">Sign In</a> </button>
         </div>
@@ -24,12 +26,12 @@
     <section class="movie-info">
         <div class="poster">
             <img src="https://assets-in.bmscdn.com/iedb/movies/images/mobile/thumbnail/xlarge/oppenheimer-et00347867-1683533414.jpg" class="movie-img" width="280"><br>
-            <button class="btn"><a href="https://www.youtube.com/watch?v=uYPbbksJxIg" target="_blank">View Trailer&nbsp; <i class="fa-solid fa-video"></i></a></button>
+            <button class="btn"><a href="https://www.youtube.com/watch?v=uYPbbksJxIg" target="_blank" class="trailer">View Trailer&nbsp; <i class="fa-solid fa-video"></i></a></button>
         </div>
         <div class="info">
             <h2><span class="movie-title">OPPENHEIMER</span></h2>
             <div class="line light"></div>
-            <p>Releasing On: <span class="release">July 21</span></p>
+            <p>Release Date: <span class="release">July 21</span></p>
             <div><i class="fa-solid fa-star"></i> <span class="rating">8.7</span></div>
             <div>
                 <span class="dur">182</span> mins &#8226;
@@ -42,9 +44,35 @@
         <h3>About The Movie</h3>
         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Cum harum ipsa provident reiciendis ullam adipisci libero, eius repellendus reprehenderit, quibusdam officiis veritatis ab voluptas officia deleniti repellat facilis. Similique unde quasi, ducimus asperiores officia velit officiis, repellat omnis dignissimos nam quae alias! Nostrum velit libero ex quam alias voluptatem hic.</p>
     </section>
-    <p class="btnp"><button class="book"><a href="layout.html">
+    <p class="btnp"><button class="book">
         Book Ticket <i class="fa-solid fa-ticket"></i></button>
-    </a></p>
+    </p>
+    </div>
+
+    <div class="slot">
+        <div class="slot-heading">
+            <h3>SLOT BOOKING</h3>
+            <button class="close-btn"><i class="fa-solid fa-x"></i></button>
+        </div>
+        <form id="slotbox" action="layout.html">
+            <div class="date">
+               <span>Select Date:<span> <input type="date" name="myDate">
+            </div>
+            <br>
+            <div class="time">
+                    <label for="time">Select Time Slot :</label>
+                    <select name="myTime" id="time">
+                        <option value="slot1" selected>08:00 hrs</option>
+                        <option value="slot2">11:00 hrs</option>
+                        <option value="slot3">14:00 hrs</option>
+                        <option value="slot4">17:00 hrs</option>
+                        <option value="slot5">21:00 hrs</option>
+                    </select>
+            </div>
+            <button class="book confirm-btn">Book Now</button>
+        </form>
+    </div>
+    
 
     <script>
         const movieImg = document.querySelector('.movie-img');
@@ -54,8 +82,10 @@
         const dur = document.querySelector('.dur');
         const genre = document.querySelector('.genre');
         const cert = document.querySelector('.cert');
+        const vidBtn = document.querySelector(".trailer");
 
         const movieInfo = JSON.parse(localStorage.getItem('movieInfo'));
+        localStorage.setItem("movieTitle", movieInfo.title);
         
         movieImg.src = movieInfo.img;
         title.textContent = movieInfo.title;
@@ -64,6 +94,25 @@
         dur.textContent = movieInfo.duration;
         genre.textContent = movieInfo.genre;
         cert.textContent = movieInfo.cert;
+        vidBtn.href = movieInfo.video;
+
+
+        //displaying and hiding popup
+        const popup = document.querySelector(".slot");
+        const closeBtn = document.querySelector(".close-btn");
+        const bookBtn = document.querySelector(".book");
+
+        bookBtn.addEventListener("click", ()=> {
+            popup.style.display = "block";
+            document.querySelector(".overlay").style.opacity = 0.5;
+        })
+
+        closeBtn.addEventListener("click", () => {
+            popup.style.display = "none";
+            document.querySelector(".overlay").style.opacity = 1;
+        })
+
+        
 
     </script>
 </body>

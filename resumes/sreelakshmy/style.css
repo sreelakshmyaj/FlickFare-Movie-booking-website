@@ -1,0 +1,234 @@
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@700&family=Quicksand&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Quicksand', sans-serif;
+}
+
+.nowrap {
+    white-space: nowrap;
+}
+
+img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body{
+    background-color: #12232E;
+    color: #EEFBFB;
+}
+
+header {
+    padding: 16px 0;
+    background-color: #12232E;
+    position: sticky;
+    top: 0;
+    left: 0;
+    box-shadow: 0px 0px 10px #12232E;
+}
+
+a{
+    color: #EEFBFB;
+    text-decoration: none;
+}
+
+ul {
+    display: flex;
+    justify-content: space-around;
+}
+
+li {
+    list-style-type: none;
+}
+
+li:hover {
+    border: 1px solid #4DA8DA;
+}
+
+li a, li a:visited {
+    padding: 10px;
+    display: block;
+}
+
+section {
+    max-width: 100vw;
+}
+
+.profile{
+    max-width: 100vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 60px;
+    min-height: 100vh;
+    margin: 80px;
+    text-align: center;
+    font-size: 30px;
+}
+
+figcaption{
+    font-size: 10px;
+}
+
+.profile img {
+    border: 10px double #4DA8DA;
+}
+
+h1{
+    font-family: 'Oswald', sans-serif;
+    font-size: 72px;
+    letter-spacing: 5px;
+    color: #4DA8DA;
+}
+
+h2{
+    font-family: 'Oswald', sans-serif;
+    text-transform: uppercase;
+    text-decoration: underline;
+    text-align: center;
+    color: #4DA8DA;
+}
+
+#about-me{
+    text-align: center;
+    background-color: #007CC7;
+    padding: 16px;
+    margin: 50px 0;
+}
+
+#about-me p{
+    width: 70%;
+    margin: 20px auto;
+}
+
+#about-me h2,
+#projects h2,
+#contact h2{
+    color: #12232E;
+}
+
+#education{
+    margin: 50px 0;
+}
+
+.schools {
+    margin-top: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    text-align: center;
+}
+
+.box{
+    width: 300px;
+    height: 200px;
+    border: 3px solid #007CC7;
+    padding: 20px;
+    border-radius: 10px;
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+}
+
+#skills {
+    margin: 50px;
+}
+
+#skills table{
+    margin: 16px auto;
+    font-size: 20px;
+}
+
+#skills td{
+    padding: 10px 16px;
+}
+
+#projects {
+    background-color: #007CC7;
+    margin: 50px 0;
+    padding: 16px;
+    text-align: center;
+}
+
+.project-imgs{
+    margin-top: 32px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+}
+
+#references {
+    margin: 50px 0;
+    text-align: center;
+}
+
+#references table td,
+#references table th,
+#references table{
+    border: 2px solid #4DA8DA;
+    border-collapse: collapse;
+    padding: 1rem;
+    margin: 32px auto;
+}
+
+#contact {
+    margin: 50px 0 0 0;
+    background-color: #007CC7;
+    padding: 16px;
+}
+
+#contact a{
+    margin-left: 10px;
+}
+
+#contact .contact-list{
+    margin: 32px;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 2rem;
+}
+
+#contact .contact-list div{
+    display: flex;
+    flex-flow: column wrap;
+    align-items: center;
+}
+
+.round {
+    background-color: #12232E;
+    color: #4DA8DA;
+    padding: 1rem;
+    border-radius: 50%;
+}
+
+@media (max-width: 768px){
+    .profile{
+        flex-flow: column wrap;
+        font-size: 20px;
+    }
+
+    h1{
+        font-size: 48px;
+    }
+}
+
+@media (max-width: 568px){
+    header {
+        display: none;
+    }
+    
+    h1{
+        font-size: 20px;
+    }
+}

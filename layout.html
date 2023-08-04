@@ -3,10 +3,149 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Book Ticket</title>
+    <title>Book Tickets</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 <body>
-    
+    <main>
+        <div class="screen"></div>
+        <p>Screen this way</p>
+
+        <div class="seats">
+            <div class="row">
+                <div class="seat">A1</div>
+                <div class="seat">A2</div>
+                <div class="seat"></div>
+                <div class="seat">A3</div>
+                <div class="seat">A4</div>
+                <div class="seat">A5</div>
+                <div class="seat">A6</div>
+                <div class="seat"></div>
+                <div class="seat">A7</div>
+                <div class="seat">A8</div>
+            </div>
+            <div class="row">
+                <div class="seat">B1</div>
+                <div class="seat">B2</div>
+                <div class="seat"></div>
+                <div class="seat">B3</div>
+                <div class="seat">B4</div>
+                <div class="seat">B5</div>
+                <div class="seat">B6</div>
+                <div class="seat"></div>
+                <div class="seat">B7</div>
+                <div class="seat occupied">B8</div>
+            </div>
+            <div class="row">
+                <div class="seat">C1</div>
+                <div class="seat">C2</div>
+                <div class="seat"></div>
+                <div class="seat">C3</div>
+                <div class="seat occupied">C4</div>
+                <div class="seat">C5</div>
+                <div class="seat">C6</div>
+                <div class="seat"></div>
+                <div class="seat">C7</div>
+                <div class="seat">C8</div>
+            </div>
+            <div class="row">
+                <div class="seat occupied">D1</div>
+                <div class="seat">D2</div>
+                <div class="seat"></div>
+                <div class="seat">D3</div>
+                <div class="seat">D4</div>
+                <div class="seat">D5</div>
+                <div class="seat">D6</div>
+                <div class="seat"></div>
+                <div class="seat">D7</div>
+                <div class="seat">D8</div>
+            </div>
+            <div class="row">
+                <div class="seat">E1</div>
+                <div class="seat">E2</div>
+                <div class="seat"></div>
+                <div class="seat">E3</div>
+                <div class="seat occupied">E4</div>
+                <div class="seat">E5</div>
+                <div class="seat occuped">E6</div>
+                <div class="seat"></div>
+                <div class="seat">E7</div>
+                <div class="seat">E8</div>
+            </div>
+        </div>
+        <div class="seat-info">
+            <div class="seat"></div>
+            <small>Available</small>
+            <div class="seat occupied"></div>
+            <small>Occupied</small>
+            <div class="seat selected"></div>
+            <small>Selected</small>
+        </div>
+        <button class="book select-seat">Select Seats</button>
+        <div class="summary">
+            <h3>Booking Summary</h3>
+            <h2 class="title"></h2>
+            <p>Number of Seats: <span class="seat-count">0</span></p>
+            <p>Seats: <span class="sel-seats"></span></p>
+            <p>Total Amount:<br>Rs <span class="amount">0.00</span></p>
+        </div>
+        <button class="book confirm-btn">Confirm Seats</button>
+
+        <div class="final">
+            <h2>Booking Complete! <i class="fa-regular fa-face-smile"></i></h2>
+            <button class="book"><a href="index.html">Go to Home</a></button>
+        </div>
+    </main>
+
+    <script>
+        const seats = document.querySelectorAll(".seat");
+        let count = 0;
+        let selSeats = [];
+        let amt = 120.00;
+        seats.forEach((seat) => {
+            seat.addEventListener("click", (e) => {
+                if(!seat.classList.contains("selected")) {
+                    seat.classList.add("selected");
+                    count++;
+                    selSeats.push(e.target.textContent);
+                } else {
+                    seat.classList.remove("selected");
+                    count--;
+                    const index = selSeats.indexOf(e.target.textContent);
+                    selSeats.splice(index, 1);
+                }
+            })
+        })
+
+        const selectBtn = document.querySelector(".select-seat");
+        const movieName = document.querySelector(".title");
+        movieName.textContent = localStorage.getItem('movieTitle');
+
+        selectBtn.addEventListener('click', () => {
+            const seatCount = document.querySelector(".seat-count");
+            const amount = document.querySelector(".amount");
+            const seats = document.querySelector(".sel-seats");
+
+            seatCount.textContent = count;
+            amount.textContent = amt*count + ".00";
+            seats.textContent = selSeats;
+        })
+
+        const confirmBtn = document.querySelector(".confirm-btn");
+        const popUp = document.querySelector(".final");
+
+        confirmBtn.addEventListener("click", () => {
+            seats.forEach((seat) => {
+                if(selSeats.includes(seat.textContent)){
+                    seat.classList.add("occupied");
+                    seat.classList.remove("selected");
+                }
+            });
+            popUp.style.display = "flex";
+        })
+
+        
+    </script>
 </body>
 </html>
