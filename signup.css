@@ -57,7 +57,6 @@ a:focus, a:active {
     padding: 0;
     font-weight: bold;
     color: #fff;
-    font-family: 'Poppins';
     font-size: 36px;
     margin-bottom: 10px; }
   
@@ -69,7 +68,6 @@ a:focus, a:active {
     line-height: 1.8;
     color: #fff;
     font-weight: 600;
-    font-family: 'Poppins';
     margin: 0px;
     background-image: url("blur.jpg");
     background-repeat: no-repeat;
@@ -112,7 +110,6 @@ a:focus, a:active {
     display: block;
     color: #fff;
     font-weight: bold;
-    font-family: 'Poppins';
     font-size: 14px;
     padding: 3px 0; }
     input::-webkit-input-placeholder {

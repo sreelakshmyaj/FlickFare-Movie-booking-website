@@ -18,7 +18,7 @@
 
         <div class="container">
             <div class="signup-content">
-                <form method="POST" id="signup-form" class="signup-form">
+                <form  id="signup-form" class="signup-form" action="./index.html">
                     <h2>Sign up </h2>
                     <p class="desc">Explore the enigmatic universe of <span>“FlickFare”</span></p>
                     <div class="form-group">
@@ -28,12 +28,14 @@
                         <input type="email" class="form-input" name="email" id="email" placeholder="Email"/>
                     </div>
                     <div class="form-group">
-                        <input type="text" class="form-input" name="password" id="password" placeholder="Password"/>
-                        <span toggle="#password" class="zmdi zmdi-eye field-icon toggle-password"></span>
+                        <input type="password" class="form-input" name="password" id="password" placeholder="Password"/>
+                    </div>
+                    <div class="form-group">
+                        <input type="password" class="form-input" name="password" id="password-confirm" placeholder="Confirm Password"/>
                     </div>
                     <div class="form-group">
                         <input type="submit" name="submit" id="submit" class="form-submit submit" value="Sign up"/>
-                        <a href="#" class="submit-link submit">Sign in</a>
+                        <a href="signin.html" class="submit-link submit">Sign in</a>
                     </div>
                 </form>
             </div>
@@ -42,7 +44,28 @@
     </div>
 
     
-    <script src="vendor/jquery/jquery.min.js"></script>
-    <script src="js/main.js"></script>
+    <script>
+        const form = document.getElementById("signup-form");
+        const nameInput = document.getElementById("name");
+        const emailInput = document.getElementById("email");
+        const passwordInput = document.getElementById("password");
+        const confirmPasswordInput = document.getElementById("password-confirm");
+
+
+        form.addEventListener("submit", (e) => {
+            if (nameInput.value === "" || emailInput.value === "" || passwordInput.value === "" || confirmPasswordInput.value === "") {
+                alert("Field should not be empty")
+                e.preventDefault();
+            }
+            if (passwordInput.value.length < 6) {
+                alert("Password must be atleast 6 characters long.")
+                e.preventDefault();
+            }
+            if(passwordInput.value !== confirmPasswordInput.value) {
+                alert("Password and confirm password does not match");
+                e.preventDefault();
+            }
+        })
+    </script>
 </body>
 </html>
