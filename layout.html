@@ -86,6 +86,7 @@
         <div class="summary">
             <h3>Booking Summary</h3>
             <h2 class="title"></h2>
+            <p class="date"></p>
             <p>Number of Seats: <span class="seat-count">0</span></p>
             <p>Seats: <span class="sel-seats"></span></p>
             <p>Total Amount:<br>Rs <span class="amount">0.00</span></p>
@@ -120,7 +121,10 @@
 
         const selectBtn = document.querySelector(".select-seat");
         const movieName = document.querySelector(".title");
+        const date = document.querySelector(".date");
+        const time = document.querySelector(".time");
         movieName.textContent = localStorage.getItem('movieTitle');
+        date.textContent = localStorage.getItem("Date") + "     " + localStorage.getItem("Time");
 
         selectBtn.addEventListener('click', () => {
             const seatCount = document.querySelector(".seat-count");

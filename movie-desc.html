@@ -56,17 +56,17 @@
         </div>
         <form id="slotbox" action="layout.html">
             <div class="date">
-               <span>Select Date:<span> <input type="date" name="myDate">
+               <span>Select Date:<span> <input type="date" name="myDate" id="date">
             </div>
             <br>
             <div class="time">
                     <label for="time">Select Time Slot :</label>
                     <select name="myTime" id="time">
-                        <option value="slot1" selected>08:00 hrs</option>
-                        <option value="slot2">11:00 hrs</option>
-                        <option value="slot3">14:00 hrs</option>
-                        <option value="slot4">17:00 hrs</option>
-                        <option value="slot5">21:00 hrs</option>
+                        <option value="08:00" selected>08:00 hrs</option>
+                        <option value="11:00">11:00 hrs</option>
+                        <option value="14:00">14:00 hrs</option>
+                        <option value="17:00">17:00 hrs</option>
+                        <option value="21:00">21:00 hrs</option>
                     </select>
             </div>
             <button class="book confirm-btn">Book Now</button>
@@ -85,7 +85,6 @@
         const vidBtn = document.querySelector(".trailer");
 
         const movieInfo = JSON.parse(localStorage.getItem('movieInfo'));
-        // localStorage.setItem("movieTitle", movieInfo.title);
         
         movieImg.src = movieInfo.img;
         title.textContent = movieInfo.title;
@@ -112,6 +111,19 @@
             document.querySelector(".overlay").style.opacity = 1;
         })
 
+        //slot form validation
+        const form = document.getElementById("slotbox");
+        const dateInput = document.getElementById("date");
+        const timeInput = document.getElementById("time");
+
+        form.addEventListener("submit", (e) => {
+            if (dateInput.value === "" || timeInput.value === "") {
+                alert("Please select time and date");
+                e.preventDefault();
+            }
+            localStorage.setItem("Date", dateInput.value);
+            localStorage.setItem("Time", timeInput.value);
+        })
         
 
     </script>
